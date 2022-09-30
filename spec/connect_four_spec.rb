@@ -3,16 +3,17 @@
 require "./lib/connect_four.rb"
 
 describe ConnectFour do
-    describe "#play" do
-        it "Rounds played goes up by 1" do
+    describe "#Initialize" do 
+        it "Player 1 initializes with a token" do
             game = ConnectFour.new
-            expect(game.round).to eql(1)
+            expect(game.p1.piece).to eql("\e[0;31;49m●\e[0m")
         end
 
-        xit "Puts Which Player's turn it is" do
+        it "Player 2 initializes with a token" do
             game = ConnectFour.new
-            game.play
-            expect(game.play).to eql()
+            expect(game.p2.piece).to eql("\e[0;33;49m●\e[0m")
         end
     end
 end
+
+
