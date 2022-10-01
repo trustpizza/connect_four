@@ -1,7 +1,7 @@
 class Player
-    attr_accessor :name, :piece
-    def initialize(piece)
-        @name = nil
+    attr_accessor :number, :piece
+    def initialize(piece, number)
+        @number = number
         @piece = piece
     end
 end

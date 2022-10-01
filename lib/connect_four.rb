@@ -17,9 +17,14 @@ class ConnectFour
     end
 
     def play
+        game_over = false
+
         system("clear")
         show_board()
-        play_round()
+        until game_over do
+            play_round()
+            show_board()
+        end
     end
 
     def play_round
@@ -38,10 +43,12 @@ class ConnectFour
         puts "Player #{player.number}, pick a column"
         column = gets.chomp.to_i - 1
 
-        if column < 0 or column > 7
+        if (column < 0 || column > 6)
             puts "Choose a number between 1 and 7"
+            column = 0 # Resets the choice back to 0
             find_column(player)
         end
+        column
     end
 
     def show_board
