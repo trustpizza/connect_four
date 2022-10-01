@@ -20,11 +20,23 @@ describe ConnectFour do
         end
     end
 
-    describe "#Play" do 
-        it "Round 1 begins with Player 1's turn" do
+    describe "#play_round" do 
+        xit "Round 1 begins with Player 1's turn" do
             game = ConnectFour.new
             p1 = game.p1
             expect(game.play_round).to eql(p1)
+        end
+
+        xit "Round 2 calls player 2" do 
+            game = ConnectFour.new
+            p2 = game.p2
+            game.play_round
+            expect(game.play_round).to eql(p2)
+        end 
+
+        it "Updates board as required" do 
+            game = ConnectFour.new
+            game.play_round
         end
     end
 end

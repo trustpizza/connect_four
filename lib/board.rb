@@ -15,6 +15,19 @@ class Board
         end
         puts (1..7).to_a.join(' ')
     end
+
+    def find_row(column)
+        row = 0
+        until @board[row][column] == red_circle or yellow_circle
+            row += 1 #Finds the first non empty circle
+        end
+
+        row -= 1
+    end
+
+    def update_board(column, row, piece)
+        @board[row][column] = piece
+    end
 end
 
 game = Board.new
